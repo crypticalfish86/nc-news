@@ -1,0 +1,3 @@
+WILL BE DELETED BEFORE MERGE
+
+Apologies for very late commit, roughly 80% of yesterday was taken up by me, the mentors kyle, ali and paul attempting to fix one single technical glitch with the backend, that entire process lasted until far into the afternoon, therefore the amount of work commited here after hours was an attempt to catch up for that lost time so these plans i have created represent one full single day of work in hours.
