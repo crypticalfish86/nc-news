@@ -1,4 +1,3 @@
-import { Trending } from './1B-Trending'
 import { AllArticles } from './2B-All-Articles'
 import { useState } from 'react'
 import { useEffect } from 'react'
@@ -17,7 +16,6 @@ export const HomePageRender = () =>
     }, [])
     return(
         <div id="Home_Page_Render">
-            <Trending CurrentArticles={CurrentArticles}/>
             <AllArticles CurrentArticles={CurrentArticles}/>
         </div>
     )
