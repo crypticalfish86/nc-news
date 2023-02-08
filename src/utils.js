@@ -8,3 +8,7 @@ export const getAllArticles = () =>
     .then((data)=> {return data})
 }
 
+export const getSingleArticle = (article_id) =>
+{
+    return articleApi.get(`/api/articles/${article_id}`)
+}
