@@ -1,4 +1,55 @@
 .App {
   text-align: center;
 }
-
+#Header
+{
+  display:grid;
+  grid-template-columns: 100px 1700px 120px;
+}
+#Header_Image
+{
+  border: solid black 1px;
+  align-items: flex-start;
+}
+#Header_Title
+{
+  border: solid black 1px;
+}
+#Header_Profile
+{
+  border: solid black 1px;
+}
+#Nav_Bar
+{
+  border: solid black 1px;
+}
+#Always_Render
+{
+  border: solid black 1px;
+}
+#Home_Page_Render
+{
+  display: grid;
+  grid-template-columns: 959px 959px; /*determines how wide each child is*/
+}
+#Trending_List
+{
+  border: solid black 1px;
+}
+#Article_List
+{
+  border: solid black 1px;
+}
+.HomePage_Render_Direct_Child
+{
+  border: solid black 1px;
+  
+}
+.HomePage_Render_Direct_Child_Title
+{
+  border: solid black 1px;
+}
+.Article_Card
+{
+  border: solid black 1px;
+}
