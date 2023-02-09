@@ -1,12 +1,14 @@
+import { Link } from 'react-router-dom'
+
 export const SortedArticle = (props) =>
 {
     const article = props.article
     return(
         <div className="Article_Card">
             <section>
-                <h3>
+                <Link to={`/articles/${article.article_id}`}>
                 {article.title}
-                </h3>
+                </Link>
                 <p>
                 by {article.author}
                 </p>
