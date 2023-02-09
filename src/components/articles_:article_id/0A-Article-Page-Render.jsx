@@ -5,7 +5,7 @@ import { useState, useEffect } from "react"
 
 export const ArticlePageRender = () =>
 {
-    const { article_id } = useParams() //do the get request here and then we will seed relevant data to the 3 components
+    const { article_id } = useParams() 
     const [currentSingleArticle, setSingleArticle] = useState({})
     useEffect(() =>
     {
