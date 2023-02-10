@@ -2,9 +2,9 @@ import axios from 'axios'
 
 const articleApi = axios.create({baseURL: "https://jaces-nc-news.onrender.com"})
 
-export const getAllArticles = () =>
+export const getAllArticles = (query = "") =>
 {
-    return articleApi.get("/api/articles")
+    return articleApi.get(`/api/articles${query}`)
     .then((data)=> {return data})
 }
 

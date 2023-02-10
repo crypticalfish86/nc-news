@@ -36,6 +36,10 @@ export const ArticleInfo = (props) =>
     {
         event.preventDefault()
         postSingleArticleComment(article_id, commentBody)
+        .then(({ data }) =>
+        {
+            setComments([...currentComments, data])
+        })
     }
 
     
@@ -119,6 +123,7 @@ export const ArticleInfo = (props) =>
                     <form onSubmit={(event) => {postComment(event, commentBoxValue)}}>
                        <input type="text" onChange={(event) => {logTextBox(event)}}/>
                     </form>
+                    <button onClick={(event) => {postComment(event, commentBoxValue)}}>Submit Comment</button>
                 </section>
                 <section id="Posted_Comments">
                     {currentComments.map((comment) => {return(<SingleArticleComments comment={comment}/>)})}

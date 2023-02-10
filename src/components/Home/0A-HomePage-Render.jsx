@@ -14,9 +14,11 @@ export const HomePageRender = () =>
             SetCurrentArticles([...data])
         })
     }, [])
+    const [loadedBool, setLoadBool] = useState(false)
+    useEffect(() => {setLoadBool(true)}, [CurrentArticles])
     return(
-        <div id="Home_Page_Render">
+        loadedBool?<div id="Home_Page_Render">
             <AllArticles CurrentArticles={CurrentArticles}/>
-        </div>
+        </div> : <h1>Please wait, loading Article List(this may take up to a minute)</h1>
     )
 }

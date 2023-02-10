@@ -6,6 +6,14 @@
   display:grid;
   grid-template-columns: 100px 1700px 120px;
 }
+#Search_Topic
+{
+  display:grid;
+  grid-template-columns: 400px 300px 400px;
+  font-weight: 1000;
+  font-size: x-large;
+  
+}
 #Header_Image
 {
   border: solid black 1px;
@@ -26,11 +34,6 @@
 #Always_Render
 {
   border: solid black 1px;
-}
-#Home_Page_Render
-{
-  display: grid;
-  grid-template-columns: 959px 959px; /*determines how wide each child is*/
 }
 #Trending_List
 {

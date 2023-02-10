@@ -7,6 +7,7 @@ export const ArticlePageRender = () =>
 {
     const { article_id } = useParams() 
     const [currentSingleArticle, setSingleArticle] = useState({})
+    const [loadedBool, setLoadBool] = useState(false)
     useEffect(() =>
     {
         getSingleArticle(article_id)
@@ -15,9 +16,10 @@ export const ArticlePageRender = () =>
         setSingleArticle(data)
     })
     }, [])
+    useEffect(() => {setLoadBool(true)}, [currentSingleArticle])
     return(
-        <div id="Article_Page_Render">
+        loadedBool?<div id="Article_Page_Render">
             <Article currentSingleArticle={currentSingleArticle}/>
-        </div>
+        </div> : <h1>Please Wait Loading Article(this may take up to a minute)</h1>
     )
 }
