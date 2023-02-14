@@ -1,23 +1,18 @@
 import { useState, useEffect } from "react"
-import { getSingleArticleComments, patchSingleArticleVotes } from "../../utils"
-import { SingleArticleComments } from "./1D-Single-Article-Comments"
+import { getSingleArticleComments, patchSingleArticleVotes, postSingleArticleComment } from "../../utils"
+import { SingleArticleComments } from "./1D(A)-Single-Article-Comments"
 
 export const ArticleInfo = (props) =>
 {
-    const [commentBool, setCommentBool] = useState(false)
-    const [currentComments, setComments] = useState([])
-    const [upVoteBool, setUpvoteBool] = useState(false)
-    const [downVoteBool, setdownvoteBool] = useState(false)
-    let votes = props.votes
-    const [voteValue, setVoteValue] = useState(0)
-    useEffect(() => {setVoteValue(votes)}, [votes]) 
-    //use effect runs on first render, any callback will trigger a rerender
-    const comment_count = props.comment_count
     const article_id = props.article_id
-    function displayComments(event, article_id)
+
+    const comment_count = props.comment_count
+    const [displayCommentBool, setDisplayCommentBool] = useState(false)
+    const [currentComments, setComments] = useState([])
+    function displayComments(event)
     {
         event.preventDefault()
-        setCommentBool(true)
+        setDisplayCommentBool(true)
         getSingleArticleComments(article_id)
         .then(({ data }) =>
         {
@@ -27,8 +22,35 @@ export const ArticleInfo = (props) =>
     function hideComments(event)
     {
         event.preventDefault()
-        setCommentBool(false)
+        setDisplayCommentBool(false)
     }
+
+
+    const [commentBoxValue, setCommentBoxValue] = useState("")
+    function logTextBox(event)
+    {
+        event.preventDefault()
+        setCommentBoxValue(event.target.value)
+    }
+    function postComment(event, commentBody)
+    {
+        event.preventDefault()
+        postSingleArticleComment(article_id, commentBody)
+        .then(({ data }) =>
+        {
+            setComments([...currentComments, data])
+        })
+    }
+
+    
+    const [upVoteBool, setUpvoteBool] = useState(false)
+    const [downVoteBool, setdownvoteBool] = useState(false)
+    let votes = props.votes
+    const [voteValue, setVoteValue] = useState(0)
+    useEffect(() => {setVoteValue(votes)}, [votes]) 
+    //use effect runs on first render, any callback will trigger a rerender
+    //because votes is asigned a value immediatley useEffect will run once to set voteValue as the value of votes
+
     function upVote(event)
     {
         event.preventDefault()
@@ -86,7 +108,7 @@ export const ArticleInfo = (props) =>
 
 
     return(
-        commentBool?
+        displayCommentBool?
         (<div id="Single_Article_Info_Comments_Hidden" className="Single_Article_Child">
         <section>
             <section id="Voting">
@@ -96,9 +118,18 @@ export const ArticleInfo = (props) =>
             </section>
 
             <button id="Show_Comments_Button" onClick={(event) => {hideComments(event)}}>hide comments</button>
-            <section>
-                {currentComments.map((comment) => {return(<SingleArticleComments comment={comment}/>)})}
+            <section id="Comments_Section">
+                <section id="Post_New_Comment_Area">
+                    <form onSubmit={(event) => {postComment(event, commentBoxValue)}}>
+                       <input type="text" onChange={(event) => {logTextBox(event)}}/>
+                    </form>
+                    <button onClick={(event) => {postComment(event, commentBoxValue)}}>Submit Comment</button>
+                </section>
+                <section id="Posted_Comments">
+                    {currentComments.map((comment) => {return(<SingleArticleComments comment={comment}/>)})}
+                </section>
             </section>
+
         </section>
     </div>)
         :
@@ -109,7 +140,7 @@ export const ArticleInfo = (props) =>
                 <p>votes:{voteValue}</p>
                 <button id="Down_Vote" className="Vote_Button" onClick={(event) => {downVote(event)}}>-</button>
             </section>
-            <button onClick={(event) => (displayComments(event,article_id))}>show comments ({comment_count})</button>
+            <button onClick={(event) => (displayComments(event))}>show comments ({comment_count})</button>
         </section>
     </div>)
     )
