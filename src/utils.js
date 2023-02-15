@@ -2,9 +2,21 @@ import axios from 'axios'
 
 const articleApi = axios.create({baseURL: "https://jaces-nc-news.onrender.com"})
 
-export const getAllArticles = (query = "") =>
+export const getAllArticles = (topic, sortby, order) =>
 {
-    return articleApi.get(`/api/articles${query}`)
+    if(!topic)
+    {
+        topic = ""
+    }
+    if(!sortby)
+    {
+        sortby = ""
+    }
+    if(!order)
+    {
+        order = ""
+    }
+    return articleApi.get(`/api/articles?topic=${topic}&sort_by=${sortby}&order=${order}`)
     .then((data)=> {return data})
 }
 

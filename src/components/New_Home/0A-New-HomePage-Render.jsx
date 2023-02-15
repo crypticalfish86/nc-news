@@ -5,25 +5,34 @@ export const NewHomePageRender = () =>
 {
     const [CurrentArticles, SetCurrentArticles] = useState([])
     const [searchParams, setSearchParams] = useSearchParams()
-    const topicQuery = searchParams.get('topic')
-    const sortByQuery = searchParams.get('sort_by')
-    const orderQuery = searchParams.get('order')
-    console.log(topicQuery)
-    console.log(sortByQuery)
-    console.log(orderQuery)
+    let topicQuery = searchParams.get('topic')
+    let sortByQuery = searchParams.get('sort_by')
+    let orderQuery = searchParams.get('order')
+
     useEffect(() => 
     {
-        getAllArticles()
+        getAllArticles(topicQuery, sortByQuery, orderQuery)
         .then(({ data }) =>
         {
+            console.log(data)
             SetCurrentArticles([...data])
         })
-    }, [])
+    }, [topicQuery, sortByQuery, orderQuery])
     
     const [loadedBool, setLoadBool] = useState(false)
     useEffect(() => {setLoadBool(true)}, [CurrentArticles])
 
     return(
-        <div></div>
+        <div id="Article_Page_Render">
+            <section id="Topic_Buttons">
+                <button>display all</button>
+                <button>coding</button>
+                <button>cooking</button>
+                <button>football</button>
+            </section>
+            <select>
+                <option>select sort by</option>
+            </select>
+        </div>
     )
 }
