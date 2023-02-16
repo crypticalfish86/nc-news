@@ -1,4 +1,4 @@
-import { SortedArticle } from "./2D-Sorted-Article"
+import { SortedArticle } from "./3A-Sorted-Article"
 
 export const ArticleList = (props) =>
 {   
