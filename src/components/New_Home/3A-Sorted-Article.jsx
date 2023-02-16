@@ -15,6 +15,9 @@ export const SortedArticle = (props) =>
                 <p>
                 votes: {article.votes}
                 </p> 
+                <p>
+                    comments: {article.comment_count}
+                </p>
             </section>
             <img src={article.article_img_url} alt="" width="100" height="100"/>
         </div>

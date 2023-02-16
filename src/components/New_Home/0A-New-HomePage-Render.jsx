@@ -4,6 +4,8 @@ import { getAllArticles } from "../../utils"
 import { AllArticles } from "./1A-All-Articles"
 export const NewHomePageRender = () =>
 {
+    const [loadedBool, setLoadBool] = useState(false)
+    const [ascButton, setButton] = useState(true)
     const [CurrentArticles, SetCurrentArticles] = useState([])
     const [searchParams, setSearchParams] = useSearchParams()
     const [currentSort, setSort] = useState("")
@@ -69,6 +71,20 @@ export const NewHomePageRender = () =>
         newParams.set('sort_by', sortByUpdate)
         setSearchParams(newParams)
     }
+    function ascChange()
+    {
+        const newParams = new URLSearchParams(searchParams)
+        newParams.set('order', 'ASC')
+        setSearchParams(newParams)
+        setButton(false)
+    }
+    function descChange()
+    {
+        const newParams = new URLSearchParams(searchParams)
+        newParams.set('order', 'DESC')
+        setSearchParams(newParams)
+        setButton(true)
+    }
 
     useEffect(() => 
     {
@@ -83,7 +99,7 @@ export const NewHomePageRender = () =>
         })
     }, [topicQuery, sortByQuery, orderQuery])
     
-    const [loadedBool, setLoadBool] = useState(false)
+
     useEffect(() => {setLoadBool(true)}, [CurrentArticles])
 
     return(
@@ -95,14 +111,23 @@ export const NewHomePageRender = () =>
                 <button onClick={() => {cookingTopic()}}>cooking</button>
                 <button onClick={() => {footballTopic()}}>football</button>
             </section>
-            <select value={currentSort} onChange={(event) => {changeSort(event)}}>
-                <option value="">sort by</option>
-                <option value="title">title</option>
-                <option value="created_at">date published</option>
-                <option value="votes">votes</option>
-                <option value="author">author</option>
-                <option value="comment_count">comments</option>
-            </select>
+            <section id="Sort_By_Bar">
+                <select value={currentSort} onChange={(event) => {changeSort(event)}}>
+                    <option value="">sort by</option>
+                    <option value="title">title</option>
+                    <option value="created_at">date published</option>
+                    <option value="votes">votes</option>
+                    <option value="author">author</option>
+                    <option value="comment_count">comments</option>
+                </select>
+                {
+                ascButton?
+                <button onClick={() => {ascChange()}}id="ASC_Button">^</button>
+                :
+                <button onClick={() => {descChange()}} id="DESC_Button">⌄</button>
+                }
+            </section>
+            
             <AllArticles CurrentArticles={CurrentArticles} />
         </div>
         :
@@ -113,15 +138,24 @@ export const NewHomePageRender = () =>
                 <button onClick={() => {cookingTopic()}}>cooking</button>
                 <button onClick={() => {footballTopic()}}>football</button>
             </section>
-            <select>
-                <option value="">sort by</option>
-                <option value="">sort by</option>
-                <option value="title">title</option>
-                <option value="created_at">date published</option>
-                <option value="votes">votes</option>
-                <option value="author">author</option>
-                <option value="comment_count">comments</option>
-            </select>
+            <section id="Sort_By_Bar">
+                <select>
+                    <option value="">sort by</option>
+                    <option value="">sort by</option>
+                    <option value="title">title</option>
+                    <option value="created_at">date published</option>
+                    <option value="votes">votes</option>
+                    <option value="author">author</option>
+                    <option value="comment_count">comments</option>
+                </select>
+                {
+                ascButton?
+                <button onClick={() => {ascChange()}}id="ASC_Button">^</button>
+                :
+                <button onClick={() => {descChange()}} id="DESC_Button">⌄</button>
+                }
+            </section>
+           
             <h1>Loading Articles Please Wait (this may take up to a minute)</h1>
         </div>
     )
