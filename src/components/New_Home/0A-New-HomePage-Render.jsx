@@ -5,6 +5,7 @@ import { AllArticles } from "./1A-All-Articles"
 export const NewHomePageRender = () =>
 {
     const [loadedBool, setLoadBool] = useState(false)
+    useEffect(() => {setLoadBool(true)}, [CurrentArticles])
     const [ascButton, setButton] = useState(true)
     const [CurrentArticles, SetCurrentArticles] = useState([])
     const [searchParams, setSearchParams] = useSearchParams()
@@ -100,7 +101,7 @@ export const NewHomePageRender = () =>
     }, [topicQuery, sortByQuery, orderQuery])
     
 
-    useEffect(() => {setLoadBool(true)}, [CurrentArticles])
+
 
     return(
         loadedBool?

@@ -41,3 +41,8 @@ export const postSingleArticleComment = (article_id, commentBody) =>
     const requestCommentBody = {username : "tickle122", body : commentBody}
     return articleApi.post(`/api/articles/${article_id}/comments`, requestCommentBody)
 }
+
+export const deleteSingleArticleComment = (comment_id) =>
+{
+    return articleApi.delete(`/api/comments/${comment_id}`)
+}
