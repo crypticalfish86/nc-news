@@ -16,7 +16,13 @@ export const ArticlePageRender = () =>
         setSingleArticle(data)
     })
     }, [])
-    useEffect(() => {setLoadBool(true)}, [currentSingleArticle])
+    useEffect(() => 
+    {
+        if(currentSingleArticle.title !== undefined)
+        {
+            setLoadBool(true)
+        }
+    }, [currentSingleArticle])
     return(
         loadedBool?<div id="Article_Page_Render">
             <Article currentSingleArticle={currentSingleArticle}/>

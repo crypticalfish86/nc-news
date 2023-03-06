@@ -2,10 +2,11 @@ import { useEffect, useState } from "react"
 import { useSearchParams} from "react-router-dom"
 import { getAllArticles } from "../../utils"
 import { AllArticles } from "./1A-All-Articles"
+import uuid from "react-uuid"
 export const NewHomePageRender = () =>
 {
     const [loadedBool, setLoadBool] = useState(false)
-    useEffect(() => {setLoadBool(true)}, [CurrentArticles])
+
     const [ascButton, setButton] = useState(true)
     const [CurrentArticles, SetCurrentArticles] = useState([])
     const [searchParams, setSearchParams] = useSearchParams()
@@ -13,6 +14,14 @@ export const NewHomePageRender = () =>
     let topicQuery = searchParams.get('topic')
     let sortByQuery = searchParams.get('sort_by')
     let orderQuery = searchParams.get('order')
+
+    useEffect(() => 
+    {
+        if(CurrentArticles.length !== 0)
+        {
+            setLoadBool(true)
+        }
+    }, [CurrentArticles])
 
     function resetTopic()
     {
@@ -129,7 +138,7 @@ export const NewHomePageRender = () =>
                 }
             </section>
             
-            <AllArticles CurrentArticles={CurrentArticles} />
+            <AllArticles CurrentArticles={CurrentArticles} key={uuid()}/>
         </div>
         :
         <div id="Article_Page_Render">

@@ -1,4 +1,5 @@
 import { SortedArticle } from "./3A-Sorted-Article"
+import uuid from "react-uuid"
 
 export const ArticleList = (props) =>
 {   
@@ -6,7 +7,7 @@ export const ArticleList = (props) =>
     return(
         <div id="Sorted_List">
             <ul>
-                {CurrentArticles.map((article) => {return <SortedArticle article={article}/>})}
+                {CurrentArticles.map((article) => {return <SortedArticle article={article} key={uuid()}/>})}
             </ul>
         </div>
     )

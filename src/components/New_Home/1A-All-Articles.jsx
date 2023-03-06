@@ -1,4 +1,5 @@
 import { ArticleList } from "./2A-Article-List"
+import uuid from "react-uuid"
 
 export const AllArticles = (props) =>
 {
@@ -6,7 +7,7 @@ export const AllArticles = (props) =>
    
        return(
         <div id="All_Articles" className="HomePage_Render_Direct_Child">
-            <ArticleList CurrentArticles={CurrentArticles}/>
+            <ArticleList CurrentArticles={CurrentArticles} key={uuid()}/>
         </div>
     )
 }
