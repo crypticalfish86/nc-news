@@ -165,8 +165,15 @@ export const NewHomePageRender = () =>
                 <button onClick={() => {descChange()}} id="DESC_Button">⌄</button>
                 }
             </section>
-           
-            <h1>Loading Articles Please Wait (this may take up to a minute)</h1>
+            <div>
+                <h1>Loading Articles Please Wait (this may take several minutes)</h1>
+                <div class="container">
+                    <span class="react-logo">
+                        <span class="nucleo"></span>
+                    </span>
+                </div>
+            </div>
+
         </div>
     )
 }

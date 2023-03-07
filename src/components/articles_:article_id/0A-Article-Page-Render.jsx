@@ -26,6 +26,15 @@ export const ArticlePageRender = () =>
     return(
         loadedBool?<div id="Article_Page_Render">
             <Article currentSingleArticle={currentSingleArticle}/>
-        </div> : <h1>Please Wait Loading Article(this may take up to a minute)</h1>
+        </div> : 
+        <div>
+            <h1>Please Wait Loading Article(this may take a couple of minutes)</h1>
+            <div class="container">
+                <span class="react-logo">
+                    <span class="nucleo"></span>
+                </span>
+            </div>
+        </div>
+        
     )
 }
