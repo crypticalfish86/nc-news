@@ -1,10 +1,19 @@
 .App {
   text-align: center;
 }
+#Startup_Page
+{
+  height: 600px;
+}
+#Jace
+{
+  height: 400px;
+}
 #Header
 {
   display:grid;
-  grid-template-columns: 100px 1700px 120px;
+  grid-template-columns: 100px 1820px;
+  background-image: url('https://www.publicdomainpictures.net/pictures/150000/velka/banner-header-tapete-1452531737Jr0.jpg');
 }
 #Search_Topic
 {
@@ -18,6 +27,11 @@
 {
   border: solid black 1px;
   align-items: flex-start;
+  height: 100px;
+}
+#Logo
+{
+  height: 100px
 }
 #Header_Title
 {
@@ -30,6 +44,7 @@
 #Always_Render
 {
   border: solid black 1px;
+  background-color: rgb(43, 40, 40);
 }
 #Trending_List
 {
@@ -48,9 +63,35 @@
 {
   border: solid black 1px;
 }
+#Sorted_List
+{
+  column-count: 2;
+}
+#Align_Articles
+{
+  padding: 10px;
+  background-color: rgb(43, 40, 40);
+}
 .Article_Card
 {
   border: solid black 1px;
+  width: 500px;
+  height: 120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 100px 300px;
+}
+#Article_Card_Header
+{
+  background-color: rgb(194, 0, 0);
+  text-align: left;
+  font-size: large;
+  width: 500px;
+  margin: 0 auto;
+}
+#HyperLink
+{
+  color: black;
 }
 #Article_Page_Render
 {
@@ -63,4 +104,9 @@
 .Single_Comment_Card
 {
   border: solid black 1px;
+}
+#Comment_Text_Box
+{
+  width: 500px;
+  height: 100px;
 }

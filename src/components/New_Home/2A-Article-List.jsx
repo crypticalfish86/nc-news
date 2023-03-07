@@ -5,8 +5,8 @@ export const ArticleList = (props) =>
 {   
     const CurrentArticles = props.CurrentArticles
     return(
-        <div id="Sorted_List">
-            <ul>
+        <div>
+            <ul id="Sorted_List">
                 {CurrentArticles.map((article) => {return <SortedArticle article={article} key={uuid()}/>})}
             </ul>
         </div>

@@ -26,11 +26,21 @@ export const ArticleInfo = (props) =>
     }
 
 
-    const [commentBoxValue, setCommentBoxValue] = useState("")
+    const [commentBoxValue, setCommentBoxValue] = useState("click here to add comment")
+    function resetBox(event)
+    {
+        event.preventDefault()
+        setCommentBoxValue("")
+        
+    }
     function logTextBox(event)
     {
         event.preventDefault()
         setCommentBoxValue(event.target.value)
+    }
+    function disableRefresh(event)
+    {
+        event.preventDefault()
     }
     function postComment(event, commentBody)
     {
@@ -38,7 +48,7 @@ export const ArticleInfo = (props) =>
         postSingleArticleComment(article_id, commentBody)
         .then(({ data }) =>
         {
-            setComments([...currentComments, data])
+            setComments([data, ...currentComments])
         })
     }
 
@@ -48,8 +58,6 @@ export const ArticleInfo = (props) =>
     let votes = props.votes
     const [voteValue, setVoteValue] = useState(0)
     useEffect(() => {setVoteValue(votes)}, [votes]) 
-    //use effect runs on first render, any callback will trigger a rerender
-    //because votes is asigned a value immediatley useEffect will run once to set voteValue as the value of votes
 
     function upVote(event)
     {
@@ -58,8 +66,8 @@ export const ArticleInfo = (props) =>
         {
 
             setUpvoteBool(false)
-            setVoteValue((voteValue) => voteValue - 1) //changes UI
-            patchSingleArticleVotes(article_id, -1) //changes API
+            setVoteValue((voteValue) => voteValue - 1) 
+            patchSingleArticleVotes(article_id, -1) 
         }
         else
         {
@@ -67,14 +75,14 @@ export const ArticleInfo = (props) =>
             {
                 setUpvoteBool(true)
                 setdownvoteBool(false)
-                setVoteValue((voteValue) => voteValue + 2) //changes UI
-                patchSingleArticleVotes(article_id, 2) //changes API
+                setVoteValue((voteValue) => voteValue + 2) 
+                patchSingleArticleVotes(article_id, 2) 
             }
             else
             {
                 setUpvoteBool(true)
-                setVoteValue((voteValue) => voteValue + 1) //changes UI
-                patchSingleArticleVotes(article_id, 1) //changes API
+                setVoteValue((voteValue) => voteValue + 1) 
+                patchSingleArticleVotes(article_id, 1) 
             }
         }
 
@@ -85,8 +93,8 @@ export const ArticleInfo = (props) =>
         if(downVoteBool)
         {
             setdownvoteBool(false)
-            setVoteValue((voteValue) => voteValue + 1) //changes UI
-            patchSingleArticleVotes(article_id, 1) //changes API
+            setVoteValue((voteValue) => voteValue + 1) 
+            patchSingleArticleVotes(article_id, 1) 
         }
         else
         {
@@ -94,14 +102,14 @@ export const ArticleInfo = (props) =>
             {
                 setdownvoteBool(true)
                 setUpvoteBool(false)
-                setVoteValue((voteValue) => voteValue - 2) //changes UI
-                patchSingleArticleVotes(article_id, -2) //changes API
+                setVoteValue((voteValue) => voteValue - 2) 
+                patchSingleArticleVotes(article_id, -2) 
             }
             else
             {
                 setdownvoteBool(true)
-                setVoteValue((voteValue) => voteValue - 1) //changes UI
-                patchSingleArticleVotes(article_id, -1) //changes API
+                setVoteValue((voteValue) => voteValue - 1) 
+                patchSingleArticleVotes(article_id, -1) 
             }
         }
     }
@@ -120,8 +128,8 @@ export const ArticleInfo = (props) =>
             <button id="Show_Comments_Button" onClick={(event) => {hideComments(event)}}>hide comments</button>
             <section id="Comments_Section">
                 <section id="Post_New_Comment_Area">
-                    <form onSubmit={(event) => {postComment(event, commentBoxValue)}}>
-                       <input type="text" onChange={(event) => {logTextBox(event)}}/>
+                    <form onSubmit={(event) => {disableRefresh(event)}}>
+                       <input type="text" onClick={(event) => {resetBox(event)}} onChange={(event) => {logTextBox(event)}} id="Comment_Text_Box" value={commentBoxValue}/>
                     </form>
                     <button onClick={(event) => {postComment(event, commentBoxValue)}}>Submit Comment</button>
                 </section>
