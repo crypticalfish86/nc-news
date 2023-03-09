@@ -5,9 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: rgb(195, 187, 187);
-  background-image: url('https://3.bp.blogspot.com/-XVVbIbqh9uQ/VT5iMR9SmdI/AAAAAAAALtw/dYjn3u1QiR8/w1200-h630-p-k-no-nu/simple-desing-wallapper-hd-simple-screen-wallpaper-wallpapers.jpg');
-  background-size: 1960px 1200px;
+  color: rgb(0, 0, 0);  background-size: 1960px 1200px;
+  background-color: rgb(243, 245, 255);
 }
 
 code {

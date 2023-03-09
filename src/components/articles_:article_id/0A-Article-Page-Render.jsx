@@ -2,6 +2,7 @@ import { Article } from "./1B-Article"
 import{ useParams } from 'react-router-dom'
 import { getSingleArticle } from "../../utils"
 import { useState, useEffect } from "react"
+import { SeeAlso } from "./2B-See-Also"
 
 export const ArticlePageRender = () =>
 {
@@ -24,8 +25,9 @@ export const ArticlePageRender = () =>
         }
     }, [currentSingleArticle])
     return(
-        loadedBool?<div id="Article_Page_Render">
+        loadedBool?<div id="Single_Article_Page_Render">
             <Article currentSingleArticle={currentSingleArticle}/>
+            <SeeAlso topic={currentSingleArticle.topic}/>
         </div> : 
         <div>
             <h1>Please Wait Loading Article(this may take a couple of minutes)</h1>

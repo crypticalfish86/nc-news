@@ -120,8 +120,6 @@ export const NewHomePageRender = () =>
                 <button onClick={() => {codingTopic()}}>coding</button>
                 <button onClick={() => {cookingTopic()}}>cooking</button>
                 <button onClick={() => {footballTopic()}}>football</button>
-            </section>
-            <section id="Sort_By_Bar">
                 <select value={currentSort} onChange={(event) => {changeSort(event)}}>
                     <option value="">sort by</option>
                     <option value="title">title</option>
@@ -130,41 +128,19 @@ export const NewHomePageRender = () =>
                     <option value="author">author</option>
                     <option value="comment_count">comments</option>
                 </select>
-                {
-                ascButton?
-                <button onClick={() => {ascChange()}}id="ASC_Button">^</button>
-                :
-                <button onClick={() => {descChange()}} id="DESC_Button">⌄</button>
-                }
+                    {
+                        ascButton?
+                        <button onClick={() => {ascChange()}}id="ASC_Button">^</button>
+                        :
+                        <button onClick={() => {descChange()}} id="DESC_Button">⌄</button>
+                    }
             </section>
+            
             
             <AllArticles CurrentArticles={CurrentArticles} key={uuid()}/>
         </div>
         :
         <div id="Article_Page_Render">
-            <section id="Topic_Buttons">
-                <button onClick={() => {resetTopic()}}>display all</button>
-                <button onClick={() => {codingTopic()}}>coding</button>
-                <button onClick={() => {cookingTopic()}}>cooking</button>
-                <button onClick={() => {footballTopic()}}>football</button>
-            </section>
-            <section id="Sort_By_Bar">
-                <select>
-                    <option value="">sort by</option>
-                    <option value="">sort by</option>
-                    <option value="title">title</option>
-                    <option value="created_at">date published</option>
-                    <option value="votes">votes</option>
-                    <option value="author">author</option>
-                    <option value="comment_count">comments</option>
-                </select>
-                {
-                ascButton?
-                <button onClick={() => {ascChange()}}id="ASC_Button">^</button>
-                :
-                <button onClick={() => {descChange()}} id="DESC_Button">⌄</button>
-                }
-            </section>
             <div>
                 <h1>Loading Articles Please Wait (this may take several minutes)</h1>
                 <div class="container">
