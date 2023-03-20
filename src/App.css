@@ -286,3 +286,7 @@ text-align:center;
   top: 100px;
   width: 1000px;
 }
+#Topic_Buttons
+{
+  padding: 1rem;
+}
