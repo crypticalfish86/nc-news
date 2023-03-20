@@ -12,11 +12,11 @@ export const Header = () =>
     }
     return(
         <div id="Header">
+            <img onClick={(event) => navHome(event)} src={northcodersLogo} alt="Northcoders_Logo" id="Logo"/>
             <div id="Header_Image_And_Title">
-                <img onClick={(event) => navHome(event)} src={northcodersLogo} alt="Northcoders_Logo" id="Logo"/>
                 <div id="Header_Title">
                     <h1>
-                        orthcoders News
+                        Northcoders News
                     </h1>
                 </div>
                 <div id="Header_Nav">

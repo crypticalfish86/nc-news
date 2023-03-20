@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom"
 import jace from '../../Assets/IMG_5156.jpg'
 import jsLogo from '../../Assets/JavaScript-logo.png'
 import SQLLogo from '../../Assets/Elephant-SQL.png'
@@ -7,17 +6,10 @@ import pythonLogo from '../../Assets/Python-Symbol.png'
 import reactLogo from '../../Assets/React.png'
 import typeScriptLogo from '../../Assets/TypeScript.png'
 import django from '../../Assets/django.png'
+import C from '../../Assets/C_Logo.png'
 
 export const About = () =>
 {
-    const navigate = useNavigate()
-
-    function navArticles(event)
-    {
-        event.preventDefault()
-        navigate('/articles')
-    }
-
     return(
         <div id="Startup_Page">
             <p>
@@ -35,11 +27,12 @@ export const About = () =>
                 </h1>
                 <div>
                     <img src={jsLogo} alt="Javascript" id="JSLogo" className="Tech_Logo"/>
-                    <img src={typeScriptLogo} alt="Javascript" id="JSLogo" className="Tech_Logo"/>
-                    <img src={pythonLogo} alt="Render" id="RenderLogo" className="Tech_Logo"/>
-                    <img src={reactLogo} alt="Render" id="RenderLogo" className="Tech_Logo"/>
+                    <img src={typeScriptLogo} alt="TypeScript" id="TSLogo" className="Tech_Logo"/>
+                    <img src={pythonLogo} alt="Python" id="PythonLogo" className="Tech_Logo"/>
+                    <img src={C} alt="C" id="RenderLogo" className="Tech_Logo"/>
+                    <img src={reactLogo} alt="React" id="ReactLogo" className="Tech_Logo"/>
                     <img src={SQLLogo} alt="PSQL" id="ElephantLogo" className="Tech_Logo"/>
-                    <img src={django} alt="PSQL" id="ElephantLogo" className="Tech_Logo"/>
+                    <img src={django} alt="Django" id="DjangoLogo" className="Tech_Logo"/>
                     <img src={renderLogo} alt="Render" id="RenderLogo" className="Tech_Logo"/>
 
                 </div>

@@ -120,11 +120,12 @@ export const ArticleInfo = (props) =>
         (<div id="Single_Article_Info_Comments_Hidden" className="Single_Article_Child">
         <section>
             <section id="Voting">
-                <button id="Up_Vote" className="Vote_button" onClick={(event) => {upVote(event)}}>+</button>
                 <p>votes:{voteValue}</p>
-                <button id="Down_Vote" className="Vote_Button" onClick={(event) => {downVote(event)}}>-</button>
+                <div>
+                    <button id="Up_Vote" className="Vote_button" onClick={(event) => {upVote(event)}}>+</button>
+                    <button id="Down_Vote" className="Vote_Button" onClick={(event) => {downVote(event)}}>-</button>
+                </div>
             </section>
-
             <button id="Show_Comments_Button" onClick={(event) => {hideComments(event)}}>hide comments</button>
             <section id="Comments_Section">
                 <section id="Post_New_Comment_Area">
@@ -144,9 +145,11 @@ export const ArticleInfo = (props) =>
         (<div id="Single_Article_Info_Comments_Hidden" className="Single_Article_Child">
         <section>
             <section id="Voting">
-                <button id="Up_Vote" className="Vote_button" onClick={(event) => {upVote(event)}}>+</button>
                 <p>votes:{voteValue}</p>
-                <button id="Down_Vote" className="Vote_Button" onClick={(event) => {downVote(event)}}>-</button>
+                <div>
+                    <button id="Up_Vote" className="Vote_button" onClick={(event) => {upVote(event)}}>+</button>
+                    <button id="Down_Vote" className="Vote_Button" onClick={(event) => {downVote(event)}}>-</button>
+                </div>
             </section>
             <button onClick={(event) => (displayComments(event))}>show comments ({comment_count})</button>
         </section>

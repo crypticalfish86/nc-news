@@ -19,9 +19,16 @@ export const SingleArticleComments = (props) =>
         :
         (
             <div className="Single_Comment_Card">
-                <p>{comment.author} ({comment.created_at})</p>
-                <p>{comment.body}</p>
-                <p>votes: {comment.votes}</p>
+                <div id="Comment_Title">
+                    <p>{comment.author}</p>
+                </div>
+                <div>
+                    <p>{comment.body}</p>
+                </div>
+                <div>
+                    <p>votes: {comment.votes}</p>
+                    {comment.created_at}
+                </div>
                 <button onClick={(event) => {deleteComment(event, comment.comment_id)}}>Delete</button>
             </div>
         )
