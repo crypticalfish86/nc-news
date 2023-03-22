@@ -1,292 +1,43 @@
 .App {
   text-align: center;
 }
-#Startup_Page
-{
-  height: 680px;
-}
-#Jace
-{
-  height: 400px;
-}
 #Header
 {
+  background-color: rgb(195, 0, 0);
+  height: 4rem;
   display: flex;
-  padding: 3em;
-  background-color: rgb(184, 6, 6);
-}
-#Search_Topic
-{
-  display:grid;
-  grid-template-columns: 400px 300px 400px;
-  font-weight: 1000;
-  font-size: x-large;
-  
-}
-#Header_Image_And_Title
-{
-  display: grid;
-  height: 3rem;
-  grid-template-columns: 17.7rem 1rem;
-  cursor: pointer;
-}
-#Logo
-{
-  height: 60px;
-  position: absolute;
-  right:0px;
-  top: 0px;
-  
+  width: 100%;
 }
 #Header_Title
 {
-  position:relative;
-  display: flex;
-  cursor: auto;
-
-}
-#Header_Profile
-{
-  border: solid black 1px;
-}
-#Header_Nav
-{
-  display: grid;
-  grid-template-columns: 200px 200px 200px 200px;
-  position: relative;
-  top: 45px;
-  left: 300px;
-  font-size: x-large;
   font-weight: 1000;
+  font-size: xxx-large;
+  margin-left: 41.5rem;
+}
+#Header_Link_Box
+{
+  background-color: rgb(195, 0, 0);
 }
 .Header_Link
 {
   text-decoration: none;
   color: rgb(41, 6, 6);
-}
-#Always_Render
-{
-  border: solid rgb(255, 255, 255) 1px;
-  width: 100%;
-}
-#Trending_List
-{
-  border: solid black 1px;
-}
-#Article_List
-{
-  border: solid black 1px;
-}
-.HomePage_Render_Direct_Child
-{
-  border: solid black 1px;
-  
-}
-.HomePage_Render_Direct_Child_Title
-{
-  border: solid black 1px;
-}
-#Sorted_List
-{
-  column-count: 3;
-}
-#Align_Articles
-{
-  padding: 5px;
-}
-.Article_Card
-{
-  border: solid black 1px;
-  width: 448px;
-  height: 55px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 0px 380px;
-  font-size: small;
-}
-#Article_Spacing
-{
-  display: grid;
-  grid-template-rows: 20px 20px 20px 20px;
-}
-#Article_Card_Header
-{
-  background-color: rgb(0, 123, 194);
-  text-align: left;
-  font-size: small;
-  width: 450px;
-  margin: 0 auto;
-  height: 20px
-}
-#HyperLink
-{
-  color: black;
-  text-decoration: none;
-}
-#Single_Article_Page_Render
-{
-  margin-top: -1px;
-  margin-left: -1px;
-  display: grid;
-  grid-template-columns: 1402px 520px;
-}
-#See_Also_Title
-{
-  border: solid black 1px;
-  background-color: rgb(194, 0, 0);
-  height: 100px;
-}
-#See_Also_Articles
-{
-  border: solid black 1px;
-  height: 499px;
-}
-.Single_Article_Child
-{
-  border: solid black 1px;
-}
-.Single_Comment_Card
-{
-  border: solid black 1px;
-  display: flexbox;
-}
-#Comment_Title
-{
-  background-color: rgb(0, 123, 194);
+  cursor: pointer;
+  padding: 6rem;
   font-weight: 1000;
-  
-}
-#Comment_Text_Box
-{
-  width: 500px;
-  height: 30px;
-}
-.container{
-  width:250px;
-  height:250px;
-  margin:20px auto 0 auto;
-  background:#222;
-
-  display:flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.react-logo{
-  display: inline-block;
-  border-radius:50%;
-  border:10px solid #00d8ff;
-
-  animation-name:rotate;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-
-}
-
-.react-logo , .react-logo:before , .react-logo:after{
-  position:absolute;
-  display: inline-block;
-  width:200px;
-  height:70px;
-  border-radius:50%;
-  border:10px solid #00d8ff;
-}
-
-.nucleo , .react-logo , .react-logo:before , .react-logo:after {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.nucleo{
-  width:40px;
-  height:40px;
-  border-radius:100%;
-  background:#00d8ff;
-}
-
-.react-logo:before , .react-logo:after{
-  content:"";
-}
-
-.react-logo:after{
-  transform:rotate(-57deg);
-}
-
-.react-logo:before{
-  transform:rotate(57deg);
-}
-
-.title{
-font-size:60px;
-background:#222;
-color:#00d8ff;
-width:250px;
-margin:2px auto;
-text-align:center;
-}
-
-@keyframes rotate{
-
-  100%{
-    transform:rotate(360deg);
-  }
+  font-size: xx-large;
 }
 #Footer
 {
-  background-color: rgb(194, 0, 0);
-  height: 40px;
-  font-size: x-large;
+  background-color: rgb(195, 0, 0);
+  display: flex;
   font-weight: 1000;
+  font-size: xx-large;
   position: fixed;
   bottom: 0;
   width: 100%;
 }
-#Contact
-{
-  text-decoration: none;
-  color: rgb(41, 6, 6);
-  position:fixed;
-  bottom: 0;
-}
 .Tech_Logo
 {
-  height: 100px;
-}
-#Single_Article_Image
-{
-  height: 250px;
-  width: 250px;
-}
-#Single_Article_Body
-{
-  position: relative;
-  height: 600px;
-  width: 1400px;
-}
-#Single_Article_Body img
-{
-  position: absolute;
-  top: 100px;
-  right: 0px
-}
-#Single_Article_Title
-{
-  position: absolute;
-  font-size: large;
-  height: 100px;
-  width: 1400px;
-  background-color: rgb(194, 0, 0);
-}
-#Body_Text
-{
-  position:absolute;
-  left:0px;
-  top: 100px;
-  width: 1000px;
-}
-#Topic_Buttons
-{
-  padding: 2rem;
+  height: 10rem;
 }

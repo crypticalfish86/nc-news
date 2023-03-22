@@ -22,9 +22,9 @@ export const Home = () =>
                     <h1>This website was made with the following tech stack</h1>
                 </div>
                 <div>
-                    <img src={jsLogo} alt="" id="JSLogo" className="Tech_Logo"/>
-                    <img src={SQLLogo} alt="" id="ElephantLogo" className="Tech_Logo"/>
-                    <img src={renderLogo} alt="" id="RenderLogo" className="Tech_Logo"/>
+                    <img src={jsLogo} alt="" className="Tech_Logo"/>
+                    <img src={SQLLogo} alt="" className="Tech_Logo"/>
+                    <img src={renderLogo} alt="" className="Tech_Logo"/>
                 </div>
             </div>
         </div>
