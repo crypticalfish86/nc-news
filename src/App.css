@@ -7,12 +7,19 @@
   height: 4rem;
   display: flex;
   width: 100%;
+  font-family: sans-serif;
 }
 #Header_Title
 {
   font-weight: 1000;
   font-size: xxx-large;
   margin-left: 41.5rem;
+}
+#Welcome_Title
+{
+  display: flex;
+  font-size: xxx-large;
+  border-bottom: solid rgb(73, 66, 66) 0.1rem;
 }
 #Header_Link_Box
 {
@@ -40,4 +47,108 @@
 .Tech_Logo
 {
   height: 10rem;
+}
+#Always_Render
+{
+  margin-bottom: 5rem;
+}
+#About_Title
+{
+  display: flex;
+  font-size: xxx-large;
+  border-bottom: solid rgb(73, 66, 66) 0.1rem;
+}
+#Jace
+{
+  height: 20rem;
+}
+#Topic_Buttons
+{
+  background-color: rgb(189, 189, 189);
+}
+button {
+  --c:  rgb(119, 117, 117); /* the color*/
+  margin-left: 1rem;
+  margin-right: 1rem;
+  box-shadow: 0 0 0 .1em inset var(--c); 
+  --_g: linear-gradient(var(--c) 0 0) no-repeat;
+  background: 
+    var(--_g) calc(var(--_p,0%) - 100%) 0%,
+    var(--_g) calc(200% - var(--_p,0%)) 0%,
+    var(--_g) calc(var(--_p,0%) - 100%) 100%,
+    var(--_g) calc(200% - var(--_p,0%)) 100%;
+  background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+  outline-offset: .1em;
+  transition: background-size .4s, background-position 0s .4s;
+}
+button:hover {
+  --_p: 100%;
+  transition: background-position .4s, background-size 0s;
+}
+button:active {
+  box-shadow: 0 0 9e9q inset #0009; 
+  background-color: var(--c);
+  color: #fff;
+}
+button {
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: .1em .6em;  
+  border: none;
+}
+#Center_List
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+#All_Articles
+{
+  width: 90%;
+}
+#Sorted_List
+{
+  column-count: 2;
+}
+#Align_Articles
+{
+  width: 40rem;
+  border: solid black 0.1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  margin-bottom: 1rem;
+}
+#Article_Card_Header
+{
+  font-weight: 300;
+  font-size: medium;
+  background-color: rgb(195, 0, 0);
+  text-align: left;
+  border: 1rem;
+  border-top-left-radius: 0.8rem;
+  border-top-right-radius: 0.8rem;
+  border-bottom: solid black 0.1rem;
+}
+#HyperLink
+{
+  text-decoration: none;
+  margin-left: 1rem;
+  color: black;
+}
+.Article_Card
+{
+  display: flex;
+}
+#Article_Card_Image
+{
+  height: 10rem;
+  width: 15rem;
+  display: grid;
+  
+}
+#Article_Card_Information
+{
+  margin-left: 6rem;
 }
