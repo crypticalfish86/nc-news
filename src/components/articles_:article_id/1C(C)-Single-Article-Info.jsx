@@ -117,7 +117,7 @@ export const ArticleInfo = (props) =>
 
     return(
         displayCommentBool?
-        (<div id="Single_Article_Info_Comments_Hidden" className="Single_Article_Child">
+        (<div id="Single_Article_Info" className="Single_Article_Child">
         <section>
             <section id="Voting">
                 <p>votes:{voteValue}</p>
@@ -142,7 +142,7 @@ export const ArticleInfo = (props) =>
         </section>
     </div>)
         :
-        (<div id="Single_Article_Info_Comments_Hidden" className="Single_Article_Child">
+        (<div id="Single_Article_Info" className="Single_Article_Child">
         <section>
             <section id="Voting">
                 <p>votes:{voteValue}</p>

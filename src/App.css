@@ -122,7 +122,7 @@ button {
 }
 #Article_Card_Header
 {
-  font-weight: 300;
+  font-weight: 400;
   font-size: medium;
   background-color: rgb(195, 0, 0);
   text-align: left;
@@ -152,3 +152,133 @@ button {
 {
   margin-left: 6rem;
 }
+#Single_Article_Page_Render
+{
+  display: flex;
+}
+#Single_Article_Title
+{
+  font-size: xx-large;
+  text-align: left;
+  border-bottom: solid black 1px;
+  margin-bottom: 0.1rem;
+}
+#Larger_Body
+{
+  display: flex;
+}
+#Single_Article_Body
+{
+  border-right: solid black 0.1rem;
+}
+#Single_Article_Image
+{
+  height: 18rem;
+  width: 24rem;
+
+}
+#Single_Article_Author
+{
+  text-align: center;
+  font-weight: 1000;
+}
+#See_Also_Title
+{
+  font-size: x-large;
+}
+#Posted_Comments
+{
+  width: 99%;
+  border-right: solid black 1px;
+}
+.Single_Comment_Card
+{
+  border-left: solid black 0.1rem;
+  border-top: solid black 0.1rem;
+  border-bottom: solid black 0.1rem;
+  margin-bottom: 0.05rem;
+}
+#Comment_Title_Box
+{
+  border-bottom: solid black 0.1rem;
+  background-color: rgb(195, 0, 0) ;
+  height: 3rem;
+  display: flex;
+}
+#Comment_Title
+{
+  text-align: left;
+  font-weight: 1000;
+  margin-left: 1rem;
+  font-size: large;
+}
+.container{
+  width:250px;
+  height:250px;
+  margin:20px auto 0 auto;
+  background:#222;
+
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.react-logo{
+  display: inline-block;
+  border-radius:50%;
+  border:10px solid #00d8ff;
+
+  animation-name:rotate;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+}
+
+.react-logo , .react-logo:before , .react-logo:after{
+  position:absolute;
+  display: inline-block;
+  width:200px;
+  height:70px;
+  border-radius:50%;
+  border:10px solid #00d8ff;
+}
+
+.nucleo , .react-logo , .react-logo:before , .react-logo:after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nucleo{
+  width:40px;
+  height:40px;
+  border-radius:100%;
+  background:#00d8ff;
+}
+
+.react-logo:before , .react-logo:after{
+  content:"";
+}
+
+.react-logo:after{
+  transform:rotate(-57deg);
+}
+
+.react-logo:before{
+  transform:rotate(57deg);
+}
+.title{
+  font-size:60px;
+  background:#222;
+  color:#00d8ff;
+  width:250px;
+  margin:2px auto;
+  text-align:center;
+  }
+  
+  @keyframes rotate{
+  
+    100%{
+      transform:rotate(360deg);
+    }
+  }

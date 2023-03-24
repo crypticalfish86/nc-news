@@ -104,7 +104,6 @@ export const NewHomePageRender = () =>
         getAllArticles(topicQuery, sortByQuery, orderQuery)
         .then(({ data }) =>
         {
-            console.log(data)
             SetCurrentArticles([...data])
         })
     }, [topicQuery, sortByQuery, orderQuery])
@@ -143,9 +142,9 @@ export const NewHomePageRender = () =>
         <div id="Article_Page_Render">
             <div>
                 <h1>Loading Articles Please Wait (this may take several minutes)</h1>
-                <div class="container">
-                    <span class="react-logo">
-                        <span class="nucleo"></span>
+                <div className="container">
+                    <span className="react-logo">
+                        <span className="nucleo"></span>
                     </span>
                 </div>
             </div>

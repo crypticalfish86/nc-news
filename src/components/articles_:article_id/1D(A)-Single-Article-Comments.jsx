@@ -19,8 +19,8 @@ export const SingleArticleComments = (props) =>
         :
         (
             <div className="Single_Comment_Card">
-                <div id="Comment_Title">
-                    <p>{comment.author}</p>
+                <div id="Comment_Title_Box" >
+                    <p id="Comment_Title">{comment.author}</p>
                 </div>
                 <div>
                     <p>{comment.body}</p>
