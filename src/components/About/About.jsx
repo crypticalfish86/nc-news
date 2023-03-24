@@ -11,17 +11,19 @@ import C from '../../Assets/C_Logo.png'
 export const About = () =>
 {
     return(
-        <div id="Startup_Page">
+        <div id="About_Page">
+            <h1 id="About_Title">Thanks for visiting!</h1>
             <p>
-                Thankyou for visiting my website ^.^. I'm a trainee-fullstack developer thats hoping to begin a career in software development.
+                Thankyou for visiting my website! I'm a trainee-fullstack developer thats hoping to begin a career in software development.
                 Having just finished my bootcamp at northcoders i'm excited to begin my career in software development.
-                <p>If you have come across my website you are likely either a close friend or potential employer, either way thankyou for taking the time to view my website :3</p>
+                <p>If you have come across my website you are likely either a close friend or potential employer, either way thankyou for taking the time to view my website.</p>
                 <p>
                     Made by: Jace Weerawardena
                 </p>
-                <img src={jace} alt="Picture of web developer" id="Jace"/>
+                
             </p>
             <div>
+                <img src={jace} alt="Picture of web developer" id="Jace"/>
                 <h1>
                     current technical experience
                 </h1>

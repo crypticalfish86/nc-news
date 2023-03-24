@@ -104,7 +104,6 @@ export const NewHomePageRender = () =>
         getAllArticles(topicQuery, sortByQuery, orderQuery)
         .then(({ data }) =>
         {
-            console.log(data)
             SetCurrentArticles([...data])
         })
     }, [topicQuery, sortByQuery, orderQuery])
@@ -116,10 +115,10 @@ export const NewHomePageRender = () =>
         loadedBool?
         <div id="Article_Page_Render">
             <section id="Topic_Buttons">
-                <button onClick={() => {resetTopic()}}>display all</button>
-                <button onClick={() => {codingTopic()}}>coding</button>
-                <button onClick={() => {cookingTopic()}}>cooking</button>
-                <button onClick={() => {footballTopic()}}>football</button>
+                <button onClick={() => {resetTopic()}} className="button">display all</button>
+                <button onClick={() => {codingTopic()}} className="button">coding</button>
+                <button onClick={() => {cookingTopic()}} className="button">cooking</button>
+                <button onClick={() => {footballTopic()}} className="button">football</button>
                 <select value={currentSort} onChange={(event) => {changeSort(event)}}>
                     <option value="">sort by</option>
                     <option value="title">title</option>
@@ -143,9 +142,9 @@ export const NewHomePageRender = () =>
         <div id="Article_Page_Render">
             <div>
                 <h1>Loading Articles Please Wait (this may take several minutes)</h1>
-                <div class="container">
-                    <span class="react-logo">
-                        <span class="nucleo"></span>
+                <div className="container">
+                    <span className="react-logo">
+                        <span className="nucleo"></span>
                     </span>
                 </div>
             </div>

@@ -12,17 +12,24 @@ export const SortedArticle = (props) =>
                     </Link>
                 </div>
             <div className="Article_Card">
-                <img src={article.article_img_url} alt="" width="55" height="55"/>
-                <section id="Article_Spacing">
+                <div>
+                    <img src={article.article_img_url} alt="" id="Article_Card_Image"/>
+                </div>
+                <div id="Article_Card_Information">
                     <p className='Article_Text'>
                     by {article.author}
                     </p>
                     <p className='Article_Text'>
-                    votes: {article.votes} comments: {article.comment_count} published: {date}
-                    </p> 
-                </section>
+                    votes: {article.votes}  
+                    </p>
+                    <p>
+                    comments: {article.comment_count}
+                    </p>
+                    <p>
+                    published: {date}
+                    </p>  
+                </div>
             </div>
-        </div>
-        
+        </div>   
     )
 }

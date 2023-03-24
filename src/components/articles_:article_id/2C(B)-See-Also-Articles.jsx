@@ -15,8 +15,7 @@ export const SeeAlsoArticles = (props) =>
             getAllArticles(topic)
             .then(({ data }) => 
             {
-                console.log(data)
-                SetTopicArticles(data.slice(0, 5))
+                SetTopicArticles(data.slice(0, 7))
             })
         }
         ,[]
@@ -44,9 +43,9 @@ export const SeeAlsoArticles = (props) =>
         <div>
             <div>
                 <h1>Loading Articles Please Wait (this may take several minutes)</h1>
-                <div class="container">
-                    <span class="react-logo">
-                        <span class="nucleo"></span>
+                <div className="container">
+                    <span className="react-logo">
+                        <span className="nucleo"></span>
                     </span>
                 </div>
             </div>
