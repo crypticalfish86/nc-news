@@ -48,6 +48,10 @@
 {
   height: 10rem;
 }
+#Logo
+{
+  height: 6rem;
+}
 #Always_Render
 {
   margin-bottom: 5rem;
@@ -152,24 +156,12 @@ button {
 {
   margin-left: 6rem;
 }
-#Single_Article_Page_Render
-{
-  display: flex;
-}
 #Single_Article_Title
 {
   font-size: xx-large;
-  text-align: left;
+  text-align: center;
   border-bottom: solid black 1px;
   margin-bottom: 0.1rem;
-}
-#Larger_Body
-{
-  display: flex;
-}
-#Single_Article_Body
-{
-  border-right: solid black 0.1rem;
 }
 #Single_Article_Image
 {
@@ -181,10 +173,6 @@ button {
 {
   text-align: center;
   font-weight: 1000;
-}
-#See_Also_Title
-{
-  font-size: x-large;
 }
 #Posted_Comments
 {

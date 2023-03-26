@@ -1,5 +1,4 @@
 import { ArticleInfo } from "./1C(C)-Single-Article-Info"
-import { SeeAlso } from "./2B-See-Also"
 export const Body = (props) =>
 {
     const currentSingleArticle = props.currentSingleArticle
@@ -16,7 +15,6 @@ export const Body = (props) =>
                     <ArticleInfo  votes={currentSingleArticle.votes} comment_count={currentSingleArticle.comment_count} article_id={currentSingleArticle.article_id}/>
             </div>
             </div>
-            <SeeAlso topic={currentSingleArticle.topic}/>
         </div>
 
     )

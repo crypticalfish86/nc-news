@@ -18,7 +18,7 @@ export const Header = () =>
                 <div id="Header_Title">
                     Northcoders News
                 </div>
-                <img src={magnifyingGlass} alt="Northcoders_Logo" id="Logo"/>
+                <img src={magnifyingGlass} alt="Northcoders_Logo"/>
         </div>
             <div id="Header_Link_Box">
                 <Link className='Header_Link' to={'/'}>home</Link>
